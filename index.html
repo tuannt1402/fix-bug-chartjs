@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="essay-result">
+        <div class="header d-flex align-items-center" style="margin-bottom: 62px;">
+            <a href="#" class="btn-back">
+                <img title="Quay lại" class="icon-back"
+                    src="{{ App\Helper\VtHelper::getLinkMedia('/v3/assets/images/backSmall.png', 4) }}" alt="Back">
+            </a>
+            <h2 class="d-flex justify-content-center heading-2-bold text-blue800 m-0" style="flex:1;">Nhận xét của gia
+                sư</h2>
+        </div>
+
+        <div class="content d-flex flex-column">
+            <div class="row" style="row-gap:12px;">
+                <div class="col-lg-6 p-0 pe-lg-2">
+                    <div class="result-frame result-point d-flex justify-content-between align-items-center">
+                        <div class="d-flex flex-column" style="row-gap: 24px;">
+                            <div class="d-flex flex-column">
+                                <h6 class="body-large-regular text-A3A6B1 m-0">Tên học sinh</h6>
+                                <h5 class="button-large text-neutral900 font-weight-600 m-0">edupiatest123456</h5>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <h6 class="body-large-regular text-A3A6B1 m-0">Thời gian nộp bài</h6>
+                                <h5 class="button-large text-neutral900 font-weight-600 m-0">01.01.2023</h5>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center position-relative">
+                            <canvas id="dashboardChart" class="panel" width="200" height="200"
+                                style="max-width:100%;"></canvas>
+                            <div class="poin-chart d-flex flex-column align-items-center position-absolute">
+                                <h3 class="point heading-3-bold font-weight-400 m-0"> 3.5<span>/5</span></h3>
+                                <p class="text body-large-semibold font-weight-500 m-0">điểm trung bình</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 p-0 ps-lg-2">
+                    <div class="result-frame result-chart">
+                        <canvas id="result-chart-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row list-item">
+                <div class="col-lg-4 frame-comment">
+                    <div class="head d-flex justify-content-between align-items-center">
+                        <div class="title vocabulary d-flex flex-column heading-6-semibold text-1F2230">
+                            Từ vựng và Ngữ pháp
+                            <span class="text-7D808E">
+                                Vocabulary and Grammar
+                            </span>
+                        </div>
+                        <div class="point heading-5-regular">
+                            4<span>/5</span>
+                        </div>
+                    </div>
+                    <div class="comment d-flex">
+                        <span class="subtitles">Nhận xét</span>
+                        <p class="font-lg text-51545F m-0">Trong buổi hôm nay con còn quên/chưa biết/phát âm chưa
+                            tốt một số từ vựng như: smile, blonde, friend, save, need, curly, long/brown hair, nice,
+                            also, his,… <br>
+                            Tuy nhiên khi cô nhắc nhở, con tiếp thu và sửa lỗi nhanh chóng. Kĩ năng nói của
+                            con còn hạn chế, con cần học từ vựng và rèn luyện kĩ năng nói nhiều hơn.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 frame-comment">
+                    <div class="head d-flex justify-content-between align-items-center">
+                        <div class="title fluency d-flex flex-column heading-6-semibold text-1F2230">
+                            Trôi chảy
+                            <span class="text-7D808E">
+                                Fluency
+                            </span>
+                        </div>
+                        <div class="point heading-5-regular">
+                            4<span>/5</span>
+                        </div>
+                    </div>
+                    <div class="comment d-flex">
+                        <span class="subtitles">Nhận xét</span>
+                        <p class="font-lg text-51545F m-0">Trong buổi hôm nay con còn quên/chưa biết/phát âm chưa
+                            tốt một số từ vựng như: smile, blonde, friend, save, need, curly, long/brown hair, nice,
+                            also, his,… <br>
+                            Tuy nhiên khi cô nhắc nhở, con tiếp thu và sửa lỗi nhanh chóng. Kĩ năng nói của
+                            con còn hạn chế, con cần học từ vựng và rèn luyện kĩ năng nói nhiều hơn.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 frame-comment">
+                    <div class="head d-flex justify-content-between align-items-center">
+                        <div class="title pronunciation d-flex flex-column heading-6-semibold text-1F2230">
+                            Phát âm
+                            <span class="text-7D808E">
+                                Pronunciation
+                            </span>
+                        </div>
+                        <div class="point heading-5-regular">
+                            2.5<span>/5</span>
+                        </div>
+                    </div>
+                    <div class="comment d-flex">
+                        <span class="subtitles">Nhận xét</span>
+                        <p class="font-lg text-51545F m-0">Trong buổi hôm nay con còn quên/chưa biết/phát âm chưa
+                            tốt một số từ vựng như: smile, blonde, friend, save, need, curly, long/brown hair, nice,
+                            also, his,… <br>
+                            Tuy nhiên khi cô nhắc nhở, con tiếp thu và sửa lỗi nhanh chóng. Kĩ năng nói của
+                            con còn hạn chế, con cần học từ vựng và rèn luyện kĩ năng nói nhiều hơn.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+    var ctx = document.getElementById("dashboardChart");
+    var dashboardChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                label: 'điểm trung bình',
+                data: [4, 1],
+                backgroundColor: [
+                    '#21BDC6',
+                    '#DEE1E1',
+                ],
+                borderColor: [
+                    'rgba(255, 255, 255 ,1)',
+                    'rgba(255, 255, 255 ,1)',
+                ],
+                borderWidth: 1,
+                cutout: '80%',
+            }]
+
+        },
+        options: {
+            reponsive: true,
+            rotation: -90,
+            circumference: 180,
+            legend: {
+                display: false
+            },
+            tooltip: {
+                enabled: false
+            },
+            events: null,
+        }
+    });
+
+    function chartInit(vocabulary, fluency, pronunciation) {
+        const data = {
+            labels: [
+                ['Từ vựng và ngữ pháp', 'Vocabulary and Grammar'],
+                ['Trôi chảy', 'Fluency'],
+                ['Phát âm', 'Pronunciation'],
+            ],
+            datasets: [{
+                label: 'điểm kỹ năng',
+                data: [
+                    vocabulary,
+                    fluency,
+                    pronunciation
+                ],
+                fill: true,
+                backgroundColor: '#dbf4f780',
+                borderColor: '#00CCCC',
+                pointBackgroundColor: '#00CCCC',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#00CCCC',
+                pointHoverBorderColor: '#00CCCC'
+            }]
+        };
+
+        new Chart(
+            document.getElementById('result-chart-canvas'), {
+                type: 'radar',
+                data: data,
+                options: {
+                    reponsive: true,
+                    maintainAspectRatio: false,
+                    scales: { // <-- Note change in options from scale to scales
+                        r: {
+                            grid: {
+                                circular: true
+                            },
+                            beginAtZero: true,
+                            max: 5,
+                            min: 0,
+                            ticks: {
+                                display: false, // Hides the labels in the middel (numbers),
+                                stepSize: 1,
+                            },
+                            pointLabels: {
+                                color: '#1F2230',
+                                font: {
+                                    size: 14,
+                                    weight: 400,
+                                    family: 'cabin',
+                                }
+                            }
+                        },
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                        }
+                    }
+                }
+            }
+        );
+    }
+    chartInit(5, 2, 4);
+
+    console.log(dashboardChart);
+</script>
+
+</html>

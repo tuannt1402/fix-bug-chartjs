@@ -1,0 +1,165 @@
+.essay-result {
+    padding: 40px 56px;
+    background: #F5FCFF;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.essay-result .content {
+    row-gap: 32px;
+    padding: 0 16px;
+}
+
+.essay-result .content .result-frame  {
+    box-shadow: inset 0px -4px 0px rgba(1, 84, 136, 0.1);
+    border-radius: 20px;
+    background: rgb(243, 237, 237);
+    padding: 12px 40px;
+    height: 100%;
+}
+
+.essay-result .content .result-frame .poin-chart {
+    bottom: 20%;
+}
+
+.essay-result .content .result-frame .poin-chart .point {
+    color: black;
+    font-size: 30px;
+}
+
+.essay-result .content .result-frame .poin-chart .point span {
+    color: #A3A6B1;
+}
+
+.essay-result .content .result-frame .poin-chart .text{
+    color: black;
+}
+
+.essay-result .content .list-item {
+    padding: 32px;
+    box-shadow: inset 0px -4px 0px rgba(1, 84, 136, 0.1);
+    border-radius: 16px;
+    background: rgb(243, 237, 237);
+    row-gap: 10px;
+}
+
+.essay-result .content .list-item .head {
+    margin-bottom: 12px;
+}
+
+.essay-result .content .list-item .head .title{
+    position: relative;
+    padding-left: 12px;
+}
+
+.essay-result .content .list-item .head .title::before {
+    content: '';
+    position: absolute;
+    border-radius: 3px;
+    background: #21BDC6;
+    width: 5px;
+    height: 24px;
+    left: 0;
+    top: 25%;
+}
+.essay-result .content .list-item .head .title span {
+    font-weight: 400;
+}
+.essay-result .content .list-item .head .title.fluency::before {
+    background: #015488;
+}
+.essay-result .content .list-item .head .title.pronunciation::before {
+    background: #FFA425;
+}
+
+.essay-result .content .list-item .head .point {
+    color: black;
+}
+.essay-result .content .list-item .head .point span {
+    color: #A3A6B1;
+}
+.essay-result .content .list-item .comment {
+    gap: 8px;
+}
+
+.essay-result .content .list-item .comment .subtitles {
+    min-width: max-content;
+    height: max-content;
+    background: #36C0C8;
+    border-radius: 4px;
+    padding: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: black;
+}
+.essay-result .content .list-item .comment  p {
+    text-align: justify;
+}
+
+@media screen and (max-width: 1200px)  {
+    .essay-result {
+        padding: 40px 26px;
+    }
+}
+
+@media screen and (max-width: 991px)  {
+    .essay-result .content .list-item .frame-comment {
+        border-bottom: 1px solid #ECEDF1;
+        padding-bottom: 5px;
+        &:last-child {
+            border: unset;
+        }
+    }
+}
+
+@media screen and (max-width: 768px)  {
+    .essay-result {
+        padding: 40px 12px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .essay-result .header .icon-back {
+        width: 40px;
+    }
+
+    .essay-result .header h2 {
+        font-size: 28px;
+    }
+    .essay-result .content .result-frame{
+        padding: 12px;
+    }
+
+    .essay-result .content .result-frame .poin-chart .point {
+        font-size: 20px;
+        line-height: 100%;
+    }
+    
+    .essay-result .content .list-item {
+    padding: 12px 0;
+    }
+}
+
+@keyframes chartfix {
+        
+    0% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+    50% {
+        transform: scale(1.01);
+        -webkit-transform: scale(1.01);
+    }
+    100% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+.panel {
+    animation-delay: 3s;
+    -webkit-animation-delay: 3s;
+    animation: chartfix 5s;
+    -webkit-animation: chartfix 5s;
+}
